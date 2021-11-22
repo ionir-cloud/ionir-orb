@@ -1,0 +1,56 @@
+description: >
+  This command clones a pvc to a remote k8s cluster in 40s
+parameters:
+  clusterUrl:
+    type: string
+    default: ""
+    description: "Ionir cluster URL to run the command (without https)"
+  clusterId:
+    type: string
+    default: ""
+    description: "Ionir source cluster ID"
+  destinationHistoryPolicy:
+    type: string
+    default: "default"
+    description: "History Policy for the clones volume"
+  destinationNamespace:
+    type: string
+    default: ""
+    description: "Namespace for the clones volume"
+  destinationPvcName:
+    type: string
+    default: ""
+    description: "PVC name for the cloned volume"
+  destinationStorageClass:
+    type: string
+    default: "ionir-default"
+    description: "StorageClass of the target PVC"
+  sourceVolumeId:
+    type: string
+    default: ""
+    description: "Source PVC Ionir ID"
+  teleClusterId:
+    type: string
+    default: ""
+    description: "Ionir cluster ID to pull the volume to from the source (target)"  
+
+    
+steps:
+  - validate:
+      environment:
+        clusterURL: <<parameters.clusterUrl>>
+        clusterId: <<parameters.clusterId>>
+      name: Clone_Validate
+      command: <<include(scripts/validate.sh)>>
+  - run:
+      environment:
+        clusterURL: <<parameters.clusterUrl>>
+        clusterId: <<parameters.clusterId>>
+        destinationHistoryPolicy: <<parameters.destinationHistoryPolicy>>
+        destinationNamespace: <<parameters.destinationNamespace>>
+        destinationPvcName: <<parameters.destinationPvcName>>
+        sourceVolumeId: <<parameters.sourceVolumeId>>
+        teleClusterId: <<parameters.teleClusterId>>
+        destinationStorageClass: <<parameters.destinationStorageClass>>
+      name: Teleport_Volume
+      command: <<include(scripts/teleport.sh)>>

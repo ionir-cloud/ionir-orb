@@ -1,0 +1,56 @@
+description: >
+  This command clones a pvc in a given cluster in real-time 
+parameters:
+  clusterUrl:
+    type: string
+    default: ""
+    description: "Ionir cluster URL to run the command (without https)"
+  clusterId:
+    type: string
+    default: ""
+    description: "Ionir cluster ID to run the command"
+  destinationHistoryPolicy:
+    type: string
+    default: "default"
+    description: "History Policy for the clones volume"
+  destinationNamespace:
+    type: string
+    default: ""
+    description: "Namespace for the clones volume"
+  destinationPvcName:
+    type: string
+    default: ""
+    description: "PVC name for the cloned volume"
+  sourceNamespace:
+    type: string
+    default: ""
+    description: "Namespace of the source PVC"
+  sourceTimeTag:
+    type: string
+    default: ""
+    description: "Timetag of the source PVC to be cloned (2019-10-12T07:20:50.52Z)"
+  sourceVolumeId:
+    type: string
+    default: ""
+    description: "Source PVC Ionir ID"
+
+    
+steps:
+  - validate:
+      environment:
+        clusterURL: <<parameters.clusterUrl>>
+        clusterId: <<parameters.clusterId>>
+      name: Clone_Validate
+      command: <<include(scripts/validate.sh)>>
+  - run:
+      environment:
+        clusterURL: <<parameters.clusterUrl>>
+        clusterId: <<parameters.clusterId>>
+        destinationHistoryPolicy: <<parameters.destinationHistoryPolicy>>
+        destinationNamespace: <<parameters.destinationNamespace>>
+        destinationPvcName: <<parameters.destinationPvcName>>
+        sourceNamespace: <<parameters.sourceNamespace>>
+        sourceTimeTag: <<parameters.sourceTimeTag>>
+        sourceVolumeId: <<parameters.sourceVolumeId>>
+      name: Clone_Volume
+      command: <<include(scripts/clone.sh)>>

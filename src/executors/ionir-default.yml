@@ -1,11 +1,11 @@
 description: >
-  This is a sample executor using Docker and Node.
+  ionir executor is REST-based 
 docker:
-  - image: 'cimg/node:<<parameters.tag>>'
+  - image: 'docker.io/curlimages/curl:<<parameters.tag>>'
 parameters:
   tag:
     default: lts
     description: >
       Pick a specific circleci/node image variant:
-      https://hub.docker.com/r/cimg/node/tags
+      https://hub.docker.com/r/curlimages/curl
     type: string

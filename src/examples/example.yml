@@ -4,10 +4,8 @@ description: >
 # Everything in the `usage` section will be displayed in the orb registry.
 # Comments are not retained.
 usage:
-  version: 2.1
+  version: 0.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    <orb-name>: ionir-orb/ionir@0.1
   workflows:
     use-my-orb:
-      jobs:
-        - <orb-name>/<job-name>
