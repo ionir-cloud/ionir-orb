@@ -1,7 +1,7 @@
 # Runs prior to every test
 setup() {
     # Load our script file.
-    source ./src/scripts/validate.sh
+    source ../scripts/validate.sh
 }
 
 @test '1: test Validate' {

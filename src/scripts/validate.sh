@@ -1,6 +1,6 @@
 validate() {
     date
-    if [[ $(curl --head --silent --fail https://$(clusterUrl}) 2> /dev/null]];
+    if curl --head --silent --fail https://${clusterUrl} 2> /dev/null ;
     then
     echo "This URL is ok."
     else
@@ -8,7 +8,6 @@ validate() {
     fi
 
 }
-
 
 # Will not run if sourced for bats-core tests.
 # View src/tests for more information.
