@@ -38,13 +38,13 @@ parameters:
 steps:
   - validate:
       environment:
-        clusterURL: <<parameters.clusterUrl>>
-        clusterId: <<parameters.clusterId>>
+        clusterUrl: <<parameters.clusterUrl>>
+        #clusterId: <<parameters.clusterId>>
       name: Clone_Validate
       command: <<include(scripts/validate.sh)>>
   - run:
       environment:
-        clusterURL: <<parameters.clusterUrl>>
+        clusterUrl: <<parameters.clusterUrl>>
         clusterId: <<parameters.clusterId>>
         destinationHistoryPolicy: <<parameters.destinationHistoryPolicy>>
         destinationNamespace: <<parameters.destinationNamespace>>
@@ -52,5 +52,5 @@ steps:
         sourceVolumeId: <<parameters.sourceVolumeId>>
         teleClusterId: <<parameters.teleClusterId>>
         destinationStorageClass: <<parameters.destinationStorageClass>>
-      name: Teleport_Volume
+      name: Teleport-Volume
       command: <<include(scripts/teleport.sh)>>
