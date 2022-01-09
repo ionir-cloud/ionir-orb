@@ -3,7 +3,7 @@ description: >
 parameters:
   clusterUrl:
     type: string
-    default: ""
+    default: "localhost"
     description: "Ionir cluster URL to run the command (without https)"
   clusterId:
     type: string
@@ -32,9 +32,7 @@ parameters:
   teleClusterId:
     type: string
     default: ""
-    description: "Ionir cluster ID to pull the volume to from the source (target)"  
-
-    
+    description: "Ionir cluster ID to pull the volume to from the source (target)"
 steps:
   - validate:
       environment:

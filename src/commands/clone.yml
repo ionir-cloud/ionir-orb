@@ -1,5 +1,5 @@
 description: >
-  This command clones a pvc in a given cluster in real-time 
+  This command clones a pvc in a given cluster in real-time
 parameters:
   clusterUrl:
     type: string
@@ -33,8 +33,6 @@ parameters:
     type: string
     default: ""
     description: "Source PVC Ionir ID"
-
-    
 steps:
   - validate:
       environment:
