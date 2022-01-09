@@ -32,7 +32,7 @@ jobs:
       - run:
           name: verify ionir backend
           command: |
-            [ -f README.md ] 
+            [ -f README.md ]
       # - run:
       #     name: verify Ionir
       #     command: curl

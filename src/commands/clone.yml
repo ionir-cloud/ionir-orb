@@ -34,7 +34,7 @@ parameters:
     default: ""
     description: "Source PVC Ionir ID"
 steps:
-  - validate:
+  - run:
       environment:
         clusterURL: <<parameters.clusterUrl>>
         clusterId: <<parameters.clusterId>>
