@@ -34,7 +34,7 @@ parameters:
     default: ""
     description: "Ionir cluster ID to pull the volume to from the source (target)"
 steps:
-  - validate:
+  - run:
       environment:
         clusterUrl: <<parameters.clusterUrl>>
         #clusterId: <<parameters.clusterId>>
