@@ -29,6 +29,10 @@ jobs:
       - image: cimg/base:stable
     steps:
       - ionir/verify
+      - run:
+          name: verify ionir backend
+          command: |
+            [ -f README.md ] 
       # - run:
       #     name: verify Ionir
       #     command: curl
