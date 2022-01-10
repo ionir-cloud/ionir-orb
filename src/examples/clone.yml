@@ -6,15 +6,15 @@ description: >
 usage:
   version: 2.1
   orbs:
-   ionir: ionir-cloud/ionir@x.y
+    ionir: ionir-cloud/ionir@x.y
   workflows:
     commands:
       - ionir/clone
-          clusterUrl: ionirexamplecluster.com
-          clusterId: 1234567890
-          destinationHistoryPolicy: 1h
-          destinationNamespace: example-namespace
-          destinationPvcName: pvc-example
-          sourceNamespace: example-namespace
-          sourceTimeTag: 2022-01-01T00:00:00+00:00
-          sourceVolumeId: 1
+          clusterUrl: "ionirexamplecluster.com"
+          clusterId: "1234567890"
+          destinationHistoryPolicy: "1h"
+          destinationNamespace: "example-namespace:"
+          destinationPvcName: "pvc-example"
+          sourceNamespace: "example-namespace"
+          sourceTimeTag: "2022-01-01T00:00:00+00:00"
+          sourceVolumeId: "1"
