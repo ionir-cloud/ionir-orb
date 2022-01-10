@@ -1,5 +1,5 @@
 validate() {
-    date
+    
     # shellcheck disable=SC2154
     if curl -o /dev/null --head --silent --fail "https://${clusterUrl}" 2> /dev/null ;
     then
