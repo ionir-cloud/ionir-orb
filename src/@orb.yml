@@ -2,9 +2,10 @@ version: 2.1
 
 description: >
   This Orb allows CircleCI users to utilize ionir Kubernetes Native Storage functionality including:
-   PVC cloning
-   Cloning back to time in 1s granularity
-   Teleport between clusters
+  - PVC cloning
+  - Cloning back to time in 1s granularity
+  - Teleport between clusters
 display:
   home_url: "https://www.ionir.com"
   source_url: "https://github.com/ionir-cloud/ionir-orb"
+  
