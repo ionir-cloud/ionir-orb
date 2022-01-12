@@ -36,7 +36,6 @@ jobs:
       # - run:
       #     name: verify Ionir
       #     command: curl
-      # "greet" is a sample command packaged with this orb config.
       # This sample integration test will run as long as the greet command exists. Once you remove the greet command you should remove this line.
       # Push new changes first, before adding new tests to your config.
 workflows:
